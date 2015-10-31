@@ -5,7 +5,7 @@
 /tailCallFibonacci/readme)](https://github.com/igrigorik/ga-beacon)
 
 
-## Recursive vs Imperative 
+## Recursive vs Imperative - [Video teaser] (https://www.youtube.com/watch?v=EiZ1liht97s)
 ![](http://i.imgur.com/IqiJmyx.png?1)
 
 ## Recursive
