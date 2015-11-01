@@ -8,6 +8,12 @@
 ## Recursive vs Imperative - [Video teaser] (https://www.youtube.com/watch?v=EiZ1liht97s)
 ![](http://i.imgur.com/IqiJmyx.png?1)
 
+## Api
+```kotlin
+interface Fibonacci {
+    fun method(n : Int) : Long
+}
+```
 ## Recursive
 
 ```kotlin
