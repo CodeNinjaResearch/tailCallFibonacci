@@ -4,10 +4,10 @@
  [![Kotlin](https://img.shields.io/badge/Kotlin-1.0.0--beta--1038-blue.svg?plastic)](http://kotlinlang.org) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/) [![Analytics](https://ga-beacon.appspot.com/UA-68658653-7
 /tailCallFibonacci/readme)](https://github.com/igrigorik/ga-beacon)
 
+## [Video teaser] (https://youtu.be/VZrOZFujnX0)
+## Recursive vs Imperative vs Functional vs Functional TailRec
 
-## Recursive vs Imperative vs Functional TailRec - [Video teaser] (https://youtu.be/VZrOZFujnX0)
-
-####Times & plot T(100) | Functional & Imperative & Tail Recurive Methods
+#### Functional & Imperative & Tail Recursive Methods
 ![](http://i.imgur.com/4R043bY.png)
 
 ## Api
@@ -104,9 +104,7 @@ class Imperative : Fibonacci {
 T(n) = Θ (n)
 ```
 
-#ASYNC PLOT
-
-## Times & plot T(100)
+## Times in console mode (without Async Plot) 
 ```
 0   Rec : 11385.0 ns          Func : 1235.0  ns     Imp : 1124.0 ns     TailRec : 2362.0 ns
 1   Rec : 4670.0 ns           Func : 1275.0  ns     Imp : 1123.0 ns     TailRec : 7046.0 ns
@@ -210,6 +208,8 @@ T(n) = Θ (n)
 99  Rec : ... ns              Func : 1778.0  ns     Imp : 4619.0 ns     TailRec : 1568.0 ns
 100 Rec : ... ns              Func : 1950.0  ns     Imp : 4976.0 ns     TailRec : 1585.0 ns
 ```
+
+## Async Plot T(44) 
 ![](http://i.imgur.com/hNJahRz.png)
 
 
