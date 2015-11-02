@@ -21,7 +21,7 @@ import kotlin.concurrent.thread
  */
 fun main(args: Array<String>) {
     var dataset = DefaultCategoryDataset();
-    val rangeSequence = 50
+    val rangeSequence = 1000
     val plot = configurePlot(dataset,rangeSequence)
     val listOfFibo = listFibonacci()
     execute(listOfFibo, rangeSequence,plot,dataset)
@@ -29,7 +29,7 @@ fun main(args: Array<String>) {
 
 private fun <T>execute(fibonacci: T, sequence: Long): Long where T: Fibonacci  = fibonacci.method(sequence)
 
-private fun listFibonacci() = listOf(Recursive(), Functional(), Imperative(), TailRec())
+private fun listFibonacci() = listOf(Recursive(), Functional(), Imperative(), TailRec()/*, Matrix(), Doubling()*/)
 
 private fun execute<T : Fibonacci>(listFibo: List<T>, rangeSequence: Int, plot : JFreeChart,dataset: DefaultCategoryDataset) {
     val max = 14000L
@@ -53,7 +53,7 @@ private fun <T : Fibonacci> drawAndUpdatePlot(plot : JFreeChart,dataset: Default
     EventQueue.invokeAndWait {
         plot.setTitle("Async Chart Fibonacci T($sequence)")
         dataset.addValue(timeEnd, fibo.javaClass.canonicalName, sequence)
-        println("${fibo.javaClass.canonicalName} ${timeEnd}")
+        //println("${fibo.javaClass.canonicalName} ${timeEnd}")
     }
 }
 
