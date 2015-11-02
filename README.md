@@ -5,9 +5,7 @@
 /tailCallFibonacci/readme)](https://github.com/igrigorik/ga-beacon)
 
 ## [Video] (https://youtu.be/VZrOZFujnX0) - [Video w/recurise](https://youtu.be/HFLel3os0Z0)
-## Recursive vs Imperative vs Functional vs Functional TailRec
 
-![](http://i.imgur.com/4R043bY.png)
 
 ## Api
 ```kotlin
@@ -33,9 +31,15 @@ class Recursive : Fibonacci {
             }
 }
 ```
+
+![](http://i.imgur.com/GezCF76.png)
+
+
 ## Complexity: 
 ```
-(a > 2) =  O(2^n) 
+T(n) = O(n) Stack space
+
+(a > 2) =  O(2^n) Operations
 Lower Bound, T(n) = Ω 2 ^(n/2)
 Upper Bound, T(n) = O 2 ^n
 ```
@@ -53,6 +57,9 @@ override fun method(n : Long) : Long {
     }
 ```
 
+![](http://i.imgur.com/RUMssYQ.png)
+
+
 ## Functional with tail call optimization
 ```kotlin
 class TailRec : Fibonacci {
@@ -69,6 +76,20 @@ class TailRec : Fibonacci {
         return _method(n, 0, 1)
     }
 }
+```
+
+![](http://i.imgur.com/mUdnc7a.png)
+
+
+
+## Complexity: 
+```
+T(n) = 1 Stack space
+
+(a > 2) =  O(2^n) Operations
+Lower Bound, T(n) = Ω 2 ^(n/2)
+Upper Bound, T(n) = O 2 ^n
+
 ```
 
 ## Imperative 
@@ -98,9 +119,12 @@ class Imperative : Fibonacci {
 }
 ```
 
+![](http://i.imgur.com/uSbUFAD.png)
+
 ## Complexity:  
 ```
-T(n) = Θ (n)
+T(n) = 1 Stack space
+T(n) = Θ (n) Operations
 ```
 
 ## Times in console mode (without Async Plot) 
@@ -210,6 +234,21 @@ T(n) = Θ (n)
 
 ## Async Plot T(44) 
 ![](http://i.imgur.com/hNJahRz.png)
+
+## Async Plot T(200) 
+![](http://i.imgur.com/6KploMB.png)
+
+##Async Plot T(565)
+![](http://i.imgur.com/rvUDmfw.png)
+
+##Async Plot T(1000)
+![](http://i.imgur.com/tePi6fJ.png)
+
+##Async Plot T(2035)
+![](http://i.imgur.com/HzWqh91.png)
+
+##Async Plot T(2499)
+![](http://i.imgur.com/FfXjZ1c.png)
 
 
 
