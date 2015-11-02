@@ -1,6 +1,7 @@
 package src
 
 import api.Fibonacci
+import java.awt.Color
 
 /**
  * Created by vicboma on 31/10/15.
@@ -10,10 +11,12 @@ class Recursive : Fibonacci {
         println("Initialize Fibonacci Recursive")
     }
 
-    open override fun method(n : Int) : Long {
-        if (n < 2)
-            return 1
-        else
-            return method(n - 1) + method(n - 2)
-    }
+    override fun method(n : Long) : Long =
+            when (n) {
+                0L -> 0L
+                1L -> 1L
+                else -> {
+                    method(n - 1) + method(n - 2)
+                }
+            }
 }
