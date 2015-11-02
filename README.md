@@ -5,9 +5,7 @@
 /tailCallFibonacci/readme)](https://github.com/igrigorik/ga-beacon)
 
 ## [Video] (https://youtu.be/VZrOZFujnX0) - [Video w/recurise](https://youtu.be/HFLel3os0Z0)
-## Recursive vs Imperative vs Functional vs Functional TailRec
 
-![](http://i.imgur.com/4R043bY.png)
 
 ## Api
 ```kotlin
@@ -237,6 +235,8 @@ T(n) = Θ (n) Operations
 ## Async Plot T(44) 
 ![](http://i.imgur.com/hNJahRz.png)
 
+## Async Plot T(44) 
+![](http://i.imgur.com/6KploMB.png)
 
 
 References:
