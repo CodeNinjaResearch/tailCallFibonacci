@@ -7,7 +7,6 @@
 ## [Video teaser] (https://youtu.be/VZrOZFujnX0)
 ## Recursive vs Imperative vs Functional vs Functional TailRec
 
-#### Functional & Imperative & Tail Recursive Methods
 ![](http://i.imgur.com/4R043bY.png)
 
 ## Api
