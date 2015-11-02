@@ -33,9 +33,15 @@ class Recursive : Fibonacci {
             }
 }
 ```
+
+![](http://i.imgur.com/GezCF76.png)
+
+
 ## Complexity: 
 ```
-(a > 2) =  O(2^n) 
+T(n) = O(n) Stack space
+
+(a > 2) =  O(2^n) Operations
 Lower Bound, T(n) = Ω 2 ^(n/2)
 Upper Bound, T(n) = O 2 ^n
 ```
@@ -53,6 +59,9 @@ override fun method(n : Long) : Long {
     }
 ```
 
+![](http://i.imgur.com/RUMssYQ.png)
+
+
 ## Functional with tail call optimization
 ```kotlin
 class TailRec : Fibonacci {
@@ -69,6 +78,20 @@ class TailRec : Fibonacci {
         return _method(n, 0, 1)
     }
 }
+```
+
+![](http://i.imgur.com/mUdnc7a.png)
+
+
+
+## Complexity: 
+```
+T(n) = 1 Stack space
+
+(a > 2) =  O(2^n) Operations
+Lower Bound, T(n) = Ω 2 ^(n/2)
+Upper Bound, T(n) = O 2 ^n
+
 ```
 
 ## Imperative 
@@ -98,9 +121,12 @@ class Imperative : Fibonacci {
 }
 ```
 
+![](http://i.imgur.com/uSbUFAD.png)
+
 ## Complexity:  
 ```
-T(n) = Θ (n)
+T(n) = 1 Stack space
+T(n) = Θ (n) Operations
 ```
 
 ## Times in console mode (without Async Plot) 
