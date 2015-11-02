@@ -14,20 +14,34 @@ class VersusTest {
         val fibI = Imperative()
         val fibF = Functional()
         val tailRec = TailRec()
+        var matrix = Matrix()
+        val doubling = Doubling()
 
 
         for(sequence in 0..20) {
-            val resR = fibR.method(sequence.toLong())
-            val resI = fibI.method(sequence.toLong())
-            val resF = fibF.method(sequence.toLong())
-            val resT = tailRec.method(sequence.toLong())
-
+            val toLong = sequence.toLong()
+            val resR = fibR.method(toLong)
+            val resI = fibI.method(toLong)
+            val resF = fibF.method(toLong)
+            val resT = tailRec.method(toLong)
+            val resM = matrix.method(toLong)
+            val resD = doubling.method(toLong)
             assertTrue {
                 "Fail resutl"
-                (resI == resR) && (resI == resT)
-                (resI == resF) && (resR == resI)
-                (resR == resT) && (resF == resT)
+                (resI == resR)
+                (resI == resT)
+                (resI == resF)
+                (resF == resT)
                 (resF == resR)
+                (resR == resT)
+                (resM == resT)
+                (resM == resF)
+                (resM == resI)
+                (resD == resI)
+                (resD == resR)
+                (resD == resF)
+                (resD == resT)
+                (resD == resM)
             }
         }
     }
