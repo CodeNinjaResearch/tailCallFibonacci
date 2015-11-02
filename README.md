@@ -235,8 +235,21 @@ T(n) = Θ (n) Operations
 ## Async Plot T(44) 
 ![](http://i.imgur.com/hNJahRz.png)
 
-## Async Plot T(44) 
+## Async Plot T(200) 
 ![](http://i.imgur.com/6KploMB.png)
+
+##Async Plot T(565)
+![](http://i.imgur.com/rvUDmfw.png)
+
+##Async Plot T(1000)
+![](http://i.imgur.com/tePi6fJ.png)
+
+##Async Plot T(2035)
+![](http://i.imgur.com/HzWqh91.png)
+
+##Async Plot T(2499)
+![](http://i.imgur.com/FfXjZ1c.png)
+
 
 
 References:
