@@ -7,10 +7,7 @@ import org.jfree.chart.JFreeChart
 import org.jfree.chart.axis.CategoryLabelPositions
 import org.jfree.chart.plot.PlotOrientation
 import org.jfree.data.category.DefaultCategoryDataset
-import src.Functional
-import src.Imperative
-import src.Recursive
-import src.TailRec
+import src.*
 import java.awt.Color
 import java.awt.EventQueue
 import javax.swing.JFrame
@@ -21,7 +18,7 @@ import kotlin.concurrent.thread
  */
 fun main(args: Array<String>) {
     var dataset = DefaultCategoryDataset();
-    val rangeSequence = 1000
+    val rangeSequence = 4000
     val plot = configurePlot(dataset,rangeSequence)
     val listOfFibo = listFibonacci()
     execute(listOfFibo, rangeSequence,plot,dataset)
@@ -29,10 +26,10 @@ fun main(args: Array<String>) {
 
 private fun <T>execute(fibonacci: T, sequence: Long): Long where T: Fibonacci  = fibonacci.method(sequence)
 
-private fun listFibonacci() = listOf(Recursive(), Functional(), Imperative(), TailRec()/*, Matrix(), Doubling()*/)
+private fun listFibonacci() = listOf(Recursive(), Functional(), Imperative(), TailRec(), Matrix(), Doubling())
 
 private fun execute<T : Fibonacci>(listFibo: List<T>, rangeSequence: Int, plot : JFreeChart,dataset: DefaultCategoryDataset) {
-    val max = 14000L
+    val max = 65000L
     for(fibo in listFibo) {
         thread{
             for (sequence in 0..rangeSequence) {

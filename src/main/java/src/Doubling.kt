@@ -13,14 +13,7 @@ class Doubling : Fibonacci {
         println("Initialize Fibonacci Doubling")
     }
 
-    /*
-    * Fast doubling method. Faster than the matrix method.
-    * F(2n) = F(n) * (2*F(n+1) - F(n)).
-    * F(2n+1) = F(n+1)^2 + F(n)^2.
-    * This implementation is the non-recursive version. See the web page and
-    * the other programming language implementations for the recursive version.
-    */
-    override fun method(n:Long) : Long {
+   override fun method(n:Long) : Long {
         val lock = java.util.concurrent.locks.ReentrantLock()
         fun multiply(x:BigInteger, y:BigInteger):BigInteger {
              lock.withLock {
