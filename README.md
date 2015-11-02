@@ -4,7 +4,7 @@
  [![Kotlin](https://img.shields.io/badge/Kotlin-1.0.0--beta--1038-blue.svg?plastic)](http://kotlinlang.org) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/) [![Analytics](https://ga-beacon.appspot.com/UA-68658653-7
 /tailCallFibonacci/readme)](https://github.com/igrigorik/ga-beacon)
 
-## [Video teaser] (https://youtu.be/VZrOZFujnX0)
+## [Video] (https://youtu.be/VZrOZFujnX0)
 ## Recursive vs Imperative vs Functional vs Functional TailRec
 
 ![](http://i.imgur.com/4R043bY.png)
