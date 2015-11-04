@@ -9,8 +9,13 @@
 
 ![](http://i.imgur.com/GXZAVzT.png)
 ![](http://i.imgur.com/PBhzpzq.png)
+![](http://i.imgur.com/inyu9Pn.png?1)
+![](http://i.imgur.com/HiynqHL.png)
 
-
+##Configure
+```kotlin
+private fun listFibonacci() = listOf(Recursive(), TailRec(),Doubling(), Imperative(), Matrix(), Functional())
+```
 ## Api
 ```kotlin
 interface Fibonacci {
