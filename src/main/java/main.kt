@@ -1,94 +1,83 @@
 
-
 import api.Fibonacci
-import org.jfree.chart.ChartFactory
-import org.jfree.chart.ChartPanel
 import org.jfree.chart.JFreeChart
-import org.jfree.chart.axis.CategoryLabelPositions
-import org.jfree.chart.plot.PlotOrientation
-import org.jfree.data.category.DefaultCategoryDataset
-import src.*
-import java.awt.Color
+import src.Recursive
+import src.TailRec
+import src.util.PlotK
 import java.awt.EventQueue
-import javax.swing.JFrame
 import kotlin.concurrent.thread
 
 /**
  * Created by vicboma on 31/10/15.
  */
 fun main(args: Array<String>) {
-    var dataset = DefaultCategoryDataset();
-    val rangeSequence = 4000
-    val plot = configurePlot(dataset,rangeSequence)
+    val rangeSequence = 50
+    val namePlot = "Fibonacci"
+    val plot = PlotK(namePlot,rangeSequence)
     val listOfFibo = listFibonacci()
-    execute(listOfFibo, rangeSequence,plot,dataset)
+    execute(listOfFibo, rangeSequence,plot)
 }
 
 private fun <T>execute(fibonacci: T, sequence: Long): Long where T: Fibonacci  = fibonacci.method(sequence)
 
-private fun listFibonacci() = listOf(Recursive(), Functional(), Imperative(), TailRec(), Matrix(), Doubling())
+private fun listFibonacci() = listOf(Recursive(), TailRec())
 
-private fun execute<T : Fibonacci>(listFibo: List<T>, rangeSequence: Int, plot : JFreeChart,dataset: DefaultCategoryDataset) {
-    val max = 65000L
+
+private fun execute<T>(listFibo: List<T>, rangeSequence: Int, plot : PlotK) where T: Fibonacci {
+
     for(fibo in listFibo) {
         thread{
             for (sequence in 0..rangeSequence) {
-                val timeInit = System.nanoTime()
-                execute(fibo, sequence.toLong())
-                val timeElapsed = System.nanoTime() - timeInit
-                var timeEnd = timeElapsed
-                if(timeElapsed > max)
-                    timeEnd = max
-
-                drawAndUpdatePlot(plot, dataset, fibo, sequence, timeEnd.toDouble())
+                val execute = calcule(fibo, sequence)
+                draw(execute, fibo, plot, sequence)
             }
         }
     }
 }
 
-private fun <T : Fibonacci> drawAndUpdatePlot(plot : JFreeChart,dataset: DefaultCategoryDataset, fibo: T, sequence: Int, timeEnd: Double) {
+private fun <T> calcule(fibo: T, sequence: Int): Long where T : Fibonacci {
+    val timeInit = System.nanoTime()
+    val execute = execute(fibo, sequence.toLong())
+    val timeEnd = System.nanoTime() - timeInit
+    println("${fibo.javaClass.canonicalName} ${execute}")
+    return execute
+}
+
+private fun <T> draw(execute: Long, fibo: T, plot: PlotK, sequence: Int) where T : Fibonacci {
     EventQueue.invokeAndWait {
-        plot.setTitle("Async Chart Fibonacci T($sequence)")
-        dataset.addValue(timeEnd, fibo.javaClass.canonicalName, sequence)
-        //println("${fibo.javaClass.canonicalName} ${timeEnd}")
+        addValueDataSet(fibo, plot, sequence, execute)
+        drawPlot(plot.chart, sequence)
     }
 }
 
-
-private fun configurePlot(DefaultCategoryDataset : DefaultCategoryDataset, iter : Int): JFreeChart {
-    val (chart, chartPanel) = configureChart(DefaultCategoryDataset, iter)
-
-    val frame = JFrame("Fibonacci");
-    frame.setSize(1280, 670);
-    frame.setContentPane(chartPanel);
-    frame.setVisible(true);
-
-    return chart
+private fun addValueDataSet<T>(fibo: T, plot: PlotK, sequence: Int, value: Long) where T : api.Fibonacci {
+    plot.dataset.addValue(value, fibo.javaClass.canonicalName, sequence)
 }
 
-private fun configureChart(DefaultCategoryDataset: DefaultCategoryDataset, iter: Int): Pair<JFreeChart, ChartPanel> {
-    val chart = ChartFactory.createBarChart(
-            "Async Chart Fibonacci T($iter)",
-            "Iteration",
-            "Time ns",
-            DefaultCategoryDataset,
-            PlotOrientation.VERTICAL,
-            true,
-            true,
-            false
-    );
-
-    chart.setBackgroundPaint(Color.white);
-    val plot = chart.getCategoryPlot();
-    plot.setBackgroundPaint(Color.lightGray);
-    plot.setDomainGridlinePaint(Color.white);
-    plot.setDomainGridlinesVisible(true);
-    plot.setRangeGridlinePaint(Color.white);
-
-    val domainAxis = plot.getDomainAxis();
-    domainAxis.setCategoryLabelPositions(CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 6.0));
-
-    val chartPanel = ChartPanel(chart);
-    return Pair(chart, chartPanel)
+private fun drawPlot(plot : JFreeChart, sequence: Int) {
+    plot.setTitle("Fibonacci T($sequence)")
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
