@@ -1,12 +1,11 @@
-##[Tail Call Optimization / Kotlin  -  Fibonacci](http://kotlin.es/2015/11/tail-call-optimization/)
+## [Tail Call Optimization / Kotlin  -  Fibonacci](http://kotlin.es/2015/11/tail-call-optimization/)
   
 
-##Build
- [![Build Status](https://travis-ci.org/CodeNinjaResearch/tailCallFibonacci.svg?plastic)](https://travis-ci.org/CodeNinjaResearch/tailCallFibonacci) [![Kotlin](https://img.shields.io/badge/Kotlin-1.0.0--beta--1038-blue.svg?plastic)](http://kotlinlang.org) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/) [![Analytics](https://ga-beacon.appspot.com/UA-68658653-7
-/tailcallfibonacci/readme)](https://github.com/igrigorik/ga-beacon)
+## Build
+ [![Build Status](https://travis-ci.org/CodeNinjaResearch/tailCallFibonacci.svg?plastic)](https://travis-ci.org/CodeNinjaResearch/tailCallFibonacci) [![Kotlin](https://img.shields.io/badge/Kotlin-1.0.0--beta--1038-blue.svg?plastic)](http://kotlinlang.org) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/)
 
-## [Video] (https://youtu.be/VZrOZFujnX0) - [w/recurise](https://youtu.be/HFLel3os0Z0)
-## [Plot] (https://youtu.be/Xszz2NrJ6Ug)
+## [Video](https://youtu.be/VZrOZFujnX0) - [w/recurise](https://youtu.be/HFLel3os0Z0)
+## [Plot](https://youtu.be/Xszz2NrJ6Ug)
 
 ![](http://i.imgur.com/GXZAVzT.png)
 ![](http://i.imgur.com/PBhzpzq.png)
